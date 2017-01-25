@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+#sign_in{
+  margin-bottom: 20px;
+}
+
+table, tr{
+  margin-bottom: 20px;
+}
+
+th, td{
+  padding-right: 30px;
+}

@@ -2,20 +2,19 @@ import React from 'react';
 import {withRouter} from 'react-router';
 import {connect} from 'react-redux';
 
-import Home from './home';
-import {logout} from '../../actions/session_actions';
-import {requestExpenses} from '../../actions/expenses_actions';
+import Expense from './expense';
+import {updateExpense, deleteExpense} from '../actions/expenses_actions';
 
 const mapStatetoProps = state => ({
   currentUser: state.session.currentUser
 });
 
 const mapDispatchtoProps = dispatch => ({
-  logout: () => dispatch(logout()),
-  requestExpenses: () => dispatch(requestExpenses())
+  updateExpense: expense => dispatch(updateExpense(expense)),
+  deleteExpense: id => dispatch(deleteExpense(id))
 });
 
 export default withRouter(connect(
   mapStatetoProps,
   mapDispatchtoProps
-)(Home));
+)(Expense));

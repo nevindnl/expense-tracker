@@ -5,6 +5,8 @@ import App from './app';
 import Home from './home/home_container';
 import AuthForm from './auth_form/auth_form_container';
 
+import {requestExpenses} from '../actions/expenses_actions';
+
 class AppRouter extends React.Component{
 	constructor(props){
 		super(props);

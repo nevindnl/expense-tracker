@@ -30,7 +30,3 @@ export const receiveErrors = errors => ({
   type: SessionActions.RECEIVE_ERRORS,
   errors
 });
-
-export const clearErrors = () => ({
-  type: SessionActions.CLEAR_ERRORS
-});

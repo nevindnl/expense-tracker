@@ -16,9 +16,6 @@ const SessionReducer = (state = {currentUser: null, errors: []}, action) => {
       newState.currentUser = null;
 			newState.errors = [];
       return newState;
-    case SessionActions.CLEAR_ERRORS:
-      newState.errors = [];
-      return newState;
     default:
       return state;
   }

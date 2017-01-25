@@ -2,20 +2,20 @@ import React from 'react';
 import {withRouter} from 'react-router';
 import {connect} from 'react-redux';
 
-import {login, signup} from '../../actions/session_actions';
-import AuthForm from './auth_form';
+import Expenses from './expenses';
+import {createExpense} from '../actions/expenses_actions';
 
 const mapStatetoProps = state => ({
   currentUser: state.session.currentUser,
-  errors: state.session.errors
+  expenses: state.expenses.expenses,
+  errors: state.expenses.errors
 });
 
 const mapDispatchtoProps = dispatch => ({
-  login: user => dispatch(login(user)),
-  signup: user => dispatch(signup(user))
+  createExpense: expense => dispatch(createExpense(expense))
 });
 
 export default withRouter(connect(
   mapStatetoProps,
   mapDispatchtoProps
-)(AuthForm));
+)(Expenses));
