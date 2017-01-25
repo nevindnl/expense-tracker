@@ -1,28 +1,39 @@
-== README
+# Expense Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The stack is PostgreSQL, Rails, and React/Redux.
 
-Things you may want to cover:
+## Database
+[Schema][schema]
 
-* Ruby version
+## API
+[Models][models]
+[Controllers][controllers]
+[Views][views]
 
-* System dependencies
+## Frontend
+[Actions][actions]
+[Middleware][middleware]
+[Reducers][reducers]
+[API Calls][util]
+### Components
+[AuthForm][auth_form]
+[Home][home]
+[Expenses][expenses]
+[Expense][expense]
+[Report][report]
+[SearchExpenses][searchexpenses]
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+[schema]: './db/schema.rb'
+[models]: './app/models'
+[controllers]: './app/controllers'
+[views]: './app/views'
+[actions]: './frontend/actions'
+[middleware]: './frontend/middleware'
+[reducers]: './frontend/reducers'
+[util]: './frontend/util'
+[auth_form]: './frontend/components/auth_form.'
+[home]: './frontend/components/home.'
+[expenses]: './frontend/components/expenses.'
+[expense]: './frontend/components/expense'
+[report]: './frontend/components/report'
+[searchexpenses]: './frontend/components/search_expenses'
