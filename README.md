@@ -6,22 +6,23 @@ The stack is PostgreSQL, Rails, and React/Redux.
 [Schema][schema]
 
 ## API
-[Models][models]
-[Controllers][controllers]
-[Views][views]
+- [Models][models]
+- [Controllers][controllers]
+- [Views][views]
 
 ## Frontend
-[Actions][actions]
-[Middleware][middleware]
-[Reducers][reducers]
-[API Calls][util]
+- [Actions][actions]
+- [Middleware][middleware]
+- [Reducers][reducers]
+- [API Calls][util]
+
 ### Components
-[AuthForm][auth_form]
-[Home][home]
-[Expenses][expenses]
-[Expense][expense]
-[Report][report]
-[SearchExpenses][searchexpenses]
+- [AuthForm][auth_form]
+- [Home][home]
+- [Expenses][expenses]
+- [Expense][expense]
+- [Report][report]
+- [SearchExpenses][searchexpenses]
 
 [schema]: db/schema.rb
 [models]: app/models
