@@ -5,7 +5,8 @@ class AuthForm extends React.Component{
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      admin: false
     };
   }
 
@@ -17,6 +18,10 @@ class AuthForm extends React.Component{
 
   update(property){
     return e => this.setState({[property]: e.target.value});
+  }
+
+  toggleAdmin(){
+    this.setState({admin: !this.state.admin});
   }
 
   signup(e){
@@ -43,6 +48,8 @@ class AuthForm extends React.Component{
         <form>
           <input type='text' placeholder='Username' value={this.state.username} onChange={this.update('username')}/>
           <input type='password' placeholder='Password' value={this.state.password} onChange={this.update('password')}/>
+          <input type='checkbox' checked={this.state.admin} onClick={this.toggleAdmin.bind(this)}/>
+          <label>Admin</label>
 					<button onClick={this.login.bind(this)}>Login</button>
           <button onClick={this.signup.bind(this)}>Sign Up</button>
         </form>
