@@ -43,3 +43,14 @@ export const receiveExpenseErrors = errors => ({
   type: ExpensesActions.RECEIVE_EXPENSE_ERRORS,
   errors
 });
+
+export const searchExpenses = (t1, t2) => ({
+  type: ExpensesActions.SEARCH_EXPENSES,
+  t1,
+  t2
+});
+
+export const receiveSearchedExpenses = expenses => ({
+  type: ExpensesActions.RECEIVE_SEARCHED_EXPENSES,
+  expenses
+});

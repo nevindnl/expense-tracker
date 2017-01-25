@@ -7,7 +7,7 @@ class Expenses extends React.Component{
     super(props);
     this.state = {
       datetime: '',
-      amount: '',
+      amount: 0.00,
       description: ''
     };
   }
@@ -17,23 +17,18 @@ class Expenses extends React.Component{
   }
 
   add(){
-    let amount = this.state.amount[0] === '$' ? this.state.amount.slice(1) : this.state.amount;
-    amount = amount.replace(",", "");
-
-    if (!amount.match(/[^\d\.]/)) {
-      this.props.createExpense({
-        expense: {
-          created_at: this.state.datetime,
-          amount: parseFloat(this.state.amount) * 100,
-          description: this.state.description
-        }
-      });
-      this.setState({
-        datetime: '',
-        amount: '',
-        description: ''
-      });
-    }
+    this.props.createExpense({
+      expense: {
+        created_at: this.state.datetime,
+        amount: parseFloat(this.state.amount) * 100,
+        description: this.state.description
+      }
+    });
+    this.setState({
+      datetime: '',
+      amount: '',
+      description: ''
+    });
   }
 
   render(){
@@ -60,8 +55,8 @@ class Expenses extends React.Component{
             {els}
             <tr>
               <td>{this.props.currentUser.username}</td>
-              <td><input type='text' placeholder='Datetime' value={this.state.datetime} onChange={this.update('datetime')}/></td>
-              <td><input type='text' placeholder='Amount' value={this.state.amount} onChange={this.update('amount')}/></td>
+              <td><input type='datetime-local' value={this.state.datetime} onChange={this.update('datetime')}/></td>
+              <td><input type='number' step='0.01' placeholder='Amount' value={this.state.amount} onChange={this.update('amount')}/></td>
               <td><input type='text' placeholder='Description' value={this.state.description} onChange={this.update('description')}/></td>
               <td><button onClick={this.add.bind(this)}>Add</button></td>
             </tr>
