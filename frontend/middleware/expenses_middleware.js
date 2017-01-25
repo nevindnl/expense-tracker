@@ -18,12 +18,11 @@ const ExpensesMiddleware = ({getState, dispatch}) => next => action => {
       ExpensesAPI.updateExpense(action.expense, success, error);
       return next(action);
     case ExpensesActions.DELETE_EXPENSE:
-      success = () => dispatch(removeExpense(action.id));
+      success = () => {dispatch(removeExpense(action.id)); dispatch(searchExpenses());};
       ExpensesAPI.deleteExpense(action.id, success, error);
       return next(action);
     case ExpensesActions.SEARCH_EXPENSES:
       success = expenses => dispatch(receiveSearchedExpenses(expenses));
-      console.log('hit');
       const state = getState().expenses;
       const t1 = state.t1;
       const t2 = state.t2;

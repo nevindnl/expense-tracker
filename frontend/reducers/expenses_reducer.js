@@ -10,14 +10,10 @@ const ExpensesReducer = (state = {expenses: [], errors: [], t1: '', t2: '', sear
 			newState.errors = [];
       return newState;
     case ExpensesActions.REMOVE_EXPENSE:
-      const i1 = newState.expenses.findIndex(expense => (
+      const i = newState.expenses.findIndex(expense => (
         expense.id === action.id
       ));
-      const i2 = newState.searchExpenses.findIndex(expense => (
-        expense.id === action.id
-      ));
-      newState.expenses.splice(i1, 1);
-      if (i2 !== -1) newState.searchExpenses.splice(i2, 1);
+      newState.expenses.splice(i, 1);
       newState.errors = [];
       return newState;
     case ExpensesActions.RECEIVE_EXPENSE_ERRORS:

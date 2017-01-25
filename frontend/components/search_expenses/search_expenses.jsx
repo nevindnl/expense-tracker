@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Expense from '../expense/expense_container';
+import SearchExpense from '../search_expense/search_expense';
 
 class SearchExpenses extends React.Component{
   constructor(props){
@@ -8,8 +8,8 @@ class SearchExpenses extends React.Component{
   }
 
   render(){
-    const els = this.props.expenses.map(expense => (
-      <Expense expense={expense} key={expense.id}/>
+    const els = this.props.expenses.map((expense, i) => (
+      <SearchExpense week={expense.week} total={expense.total} key={i}/>
     ));
 
     return (
@@ -17,10 +17,8 @@ class SearchExpenses extends React.Component{
         <table className='expenses'>
           <tbody>
             <tr>
-              <th>User</th>
-              <th>Datetime</th>
-              <th>Amount</th>
-              <th>Description</th>
+              <th>Week</th>
+              <th>Total</th>
             </tr>
             {els}
           </tbody>

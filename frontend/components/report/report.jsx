@@ -15,7 +15,11 @@ class Report extends React.Component{
     return e => this.setState({[property]: e.target.value});
   }
 
-  componentDidUpdate(){
+  componentWillMount(){
+    this.props.searchExpenses();
+  }
+
+  componentWillUpdate(){
     this.props.searchExpenses();
   }
 

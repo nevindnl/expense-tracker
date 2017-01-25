@@ -45,8 +45,11 @@ class Api::ExpensesController < ApplicationController
     else
       @expenses = current_user.expenses.where('created_at BETWEEN ? AND ?', t1, t2)
     end
-    @expenses = @expenses.order(created_at: :desc)
-    render 'api/expenses/index'
+    @expenses = @expenses.select("date_trunc('week', created_at) AS week, SUM(amount) AS total")
+      .group('week')
+      .order('week DESC')
+      .map{|aggregate| {week: aggregate.week, total: aggregate.total}}
+    render json: @expenses
   end
 
   private

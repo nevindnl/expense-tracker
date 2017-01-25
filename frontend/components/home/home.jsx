@@ -12,7 +12,7 @@ class Home extends React.Component{
   componentDidMount(){
     if (this.props.currentUser){
       this.props.requestExpenses();
-      this.props.searchExpenses();
+      this.props.updateSearch('', '');
     }
   }
 

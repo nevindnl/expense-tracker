@@ -19,7 +19,7 @@ class Expense extends React.Component{
       expense: {
         id: this.props.expense.id,
         created_at: this.state.datetime,
-        amount: this.state.amount,
+        amount: parseFloat(this.state.amount) * 100,
         description: this.state.description
       }
     });
