@@ -1,7 +1,7 @@
 # Expense Tracker
 
 [Live][heroku]
-[heroku]: expensestrack.herokuapp.com
+[heroku]: http://expensestrack.herokuapp.com
 
 The stack is PostgreSQL, Rails, and React/Redux.
 
