@@ -31,9 +31,9 @@ The stack is PostgreSQL, Rails, and React/Redux.
 [middleware]: frontend/middleware
 [reducers]: frontend/reducers
 [util]: frontend/util
-[auth_form]: frontend/components/auth_form.
-[home]: frontend/components/home.
-[expenses]: frontend/components/expenses.
+[auth_form]: frontend/components/auth_form
+[home]: frontend/components/home
+[expenses]: frontend/components/expenses
 [expense]: frontend/components/expense
 [report]: frontend/components/report
 [searchexpenses]: frontend/components/search_expenses
