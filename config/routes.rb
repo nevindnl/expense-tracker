@@ -5,5 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :expenses, only: [:index, :create, :destroy, :update]
+
+    get 'expenses/search', to: 'expenses#search'
   end
 end

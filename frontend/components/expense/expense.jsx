@@ -4,7 +4,7 @@ class Expense extends React.Component{
   constructor(props){
     super(props);
     this.state = {
-      datetime: `${this.props.expense.created_at.slice(0, 10)}T${this.props.expense.created_at.slice(11, 19)}`,
+      datetime: `${this.props.expense.created_at.slice(0, 10)}T${this.props.expense.created_at.slice(11, 16)}`,
       amount: (this.props.expense.amount/100).toFixed(2),
       description: this.props.expense.description
     };

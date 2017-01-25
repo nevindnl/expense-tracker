@@ -33,3 +33,12 @@ export const deleteExpense = (id, success, error) => {
     error
   });
 };
+
+export const searchExpenses = (t1, t2, success, error) => {
+  $.get({
+    url: `api/expenses/search`,
+    data: {t1, t2},
+    success,
+    error
+  });
+};

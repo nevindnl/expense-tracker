@@ -34,6 +34,21 @@ class Api::ExpensesController < ApplicationController
     render json: {}
   end
 
+  def search
+    t1, t2 = params[:t1], params[:t2]
+    if t1 == '' && t2 == ''
+      @expenses = current_user.expenses
+    elsif t1 == ''
+      @expenses = current_user.expenses.where('created_at < ?', t2)
+    elsif t2 == ''
+      @expenses = current_user.expenses.where('created_at > ?', t1)
+    else
+      @expenses = current_user.expenses.where('created_at BETWEEN ? AND ?', t1, t2)
+    end
+    @expenses = @expenses.order(created_at: :desc)
+    render 'api/expenses/index'
+  end
+
   private
 
   def expense_params

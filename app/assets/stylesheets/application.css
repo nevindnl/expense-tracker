@@ -24,3 +24,16 @@ table, tr{
 th, td{
   padding-right: 30px;
 }
+
+.filter{
+  margin-bottom: 20px;
+}
+
+.filter label{
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.filter button{
+  margin-left: 20px;
+}

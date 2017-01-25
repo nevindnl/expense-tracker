@@ -10,16 +10,24 @@ const ExpensesMiddleware = ({getState, dispatch}) => next => action => {
       ExpensesAPI.requestExpenses(success);
       return next(action);
     case ExpensesActions.CREATE_EXPENSE:
-      success = () => dispatch(requestExpenses());
+      success = () => {dispatch(requestExpenses()); dispatch(searchExpenses());};
       ExpensesAPI.createExpense(action.expense, success, error);
       return next(action);
     case ExpensesActions.UPDATE_EXPENSE:
-      success = () => dispatch(requestExpenses());
+      success = () => {dispatch(requestExpenses()); dispatch(searchExpenses());};
       ExpensesAPI.updateExpense(action.expense, success, error);
       return next(action);
     case ExpensesActions.DELETE_EXPENSE:
       success = () => dispatch(removeExpense(action.id));
       ExpensesAPI.deleteExpense(action.id, success, error);
+      return next(action);
+    case ExpensesActions.SEARCH_EXPENSES:
+      success = expenses => dispatch(receiveSearchedExpenses(expenses));
+      console.log('hit');
+      const state = getState().expenses;
+      const t1 = state.t1;
+      const t2 = state.t2;
+      ExpensesAPI.searchExpenses(t1, t2, success, error);
       return next(action);
     default:
       return next(action);

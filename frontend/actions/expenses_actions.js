@@ -6,6 +6,7 @@ export const ExpensesActions = {
   DELETE_EXPENSE: 'DELETE_EXPENSE',
   REMOVE_EXPENSE: 'REMOVE_EXPENSE',
   RECEIVE_EXPENSE_ERRORS: 'RECEIVE_EXPENSE_ERRORS',
+  UPDATE_SEARCH: 'UPDATE_SEARCH',
   SEARCH_EXPENSES: 'SEARCH_EXPENSES',
   RECEIVE_SEARCHED_EXPENSES: 'RECEIVE_SEARCHED_EXPENSES'
 };
@@ -44,10 +45,14 @@ export const receiveExpenseErrors = errors => ({
   errors
 });
 
-export const searchExpenses = (t1, t2) => ({
-  type: ExpensesActions.SEARCH_EXPENSES,
+export const updateSearch = (t1, t2) => ({
+  type: ExpensesActions.UPDATE_SEARCH,
   t1,
   t2
+});
+
+export const searchExpenses = () => ({
+  type: ExpensesActions.SEARCH_EXPENSES
 });
 
 export const receiveSearchedExpenses = expenses => ({
