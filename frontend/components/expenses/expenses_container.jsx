@@ -3,7 +3,7 @@ import {withRouter} from 'react-router';
 import {connect} from 'react-redux';
 
 import Expenses from './expenses';
-import {createExpense} from '../actions/expenses_actions';
+import {createExpense} from '../../actions/expenses_actions';
 
 const mapStatetoProps = state => ({
   currentUser: state.session.currentUser,

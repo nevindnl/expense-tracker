@@ -1,4 +1,4 @@
-import {ExpensesActions, requestExpenses, receiveExpenses, receiveExpense, removeExpense, receiveExpenseErrors, receiveSearchedExpenses} from '../actions/expenses_actions';
+import {ExpensesActions, requestExpenses, receiveExpenses, receiveExpense, removeExpense, receiveExpenseErrors, searchExpenses, receiveSearchedExpenses} from '../actions/expenses_actions';
 import * as ExpensesAPI from '../util/expenses_api_util';
 
 const ExpensesMiddleware = ({getState, dispatch}) => next => action => {
